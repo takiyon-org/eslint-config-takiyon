@@ -1,0 +1,23 @@
+{
+  "name": "eslint-config-takiyon",
+  "version": "0.0.0",
+  "description": "Takiyon's linting rules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takiyon-org/eslint-config-takiyon.git"
+  },
+  "keywords": [
+    "eslint",
+    "config"
+  ],
+  "author": "Jake Zatecky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takiyon-org/eslint-config-takiyon/issues"
+  },
+  "homepage": "https://github.com/takiyon-org/eslint-config-takiyon#readme"
+}
