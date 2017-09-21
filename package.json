@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-takiyon",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Takiyon's linting rules",
   "main": "index.js",
   "scripts": {
@@ -21,14 +21,14 @@
   },
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon#readme",
   "peerDependencies": {
-    "eslint": "^4.3.0",
+    "eslint": "^4.7.0",
     "eslint-plugin-import": "^2.7.0"
   },
   "devDependencies": {
-    "eslint": "^4.3.0",
+    "eslint": "^4.7.2",
     "eslint-plugin-import": "^2.7.0"
   },
   "dependencies": {
-    "eslint-config-airbnb-base": "^11.3.1"
+    "eslint-config-airbnb-base": "^12.0.0"
   }
 }
