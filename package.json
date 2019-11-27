@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-takiyon",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Takiyon's linting rules",
   "main": "index.js",
   "scripts": {
