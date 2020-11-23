@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon#readme",
   "peerDependencies": {
-    "eslint": "^6.7.1",
+    "eslint": "^7.14.0",
     "eslint-plugin-import": "^2.7.0"
   },
   "devDependencies": {
-    "eslint": "^6.7.1",
+    "eslint": "^7.14.0",
     "eslint-plugin-import": "^2.7.0"
   },
   "dependencies": {
