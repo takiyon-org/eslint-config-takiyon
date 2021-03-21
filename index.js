@@ -1,6 +1,6 @@
 module.exports = {
     extends: 'airbnb-base',
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     rules: {
         'class-methods-use-this': 'off',
         // Temporarily switch to consistent until an option exists to support multiline with

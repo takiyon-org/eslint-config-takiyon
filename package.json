@@ -21,10 +21,14 @@
   },
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon#readme",
   "peerDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/eslint-parser": "^7.13.10",
     "eslint": "^7.22.0",
     "eslint-plugin-import": "^2.7.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/eslint-parser": "^7.13.10",
     "eslint": "^7.22.0",
     "eslint-plugin-import": "^2.7.0"
   },
