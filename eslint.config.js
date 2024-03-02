@@ -5,6 +5,10 @@ const compat = new FlatCompat();
 export default [
     ...compat.extends('eslint-config-airbnb-base'),
     {
+        files: [
+            '**/*.{js,cjs,mjs,jsx}',
+        ],
+        ignores: ['./node_modules/**/*'],
         languageOptions: {
             // https://github.com/import-js/eslint-plugin-import/issues/2556
             parserOptions: {
