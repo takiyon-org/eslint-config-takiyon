@@ -10,11 +10,8 @@ export default [
         ],
         ignores: ['./node_modules/**/*'],
         languageOptions: {
-            // https://github.com/import-js/eslint-plugin-import/issues/2556
-            parserOptions: {
-                ecmaVersion: 'latest',
-                sourceType: 'module',
-            },
+            ecmaVersion: 'latest',
+            sourceType: 'module',
         },
         rules: {
             // Do not coerce methods into static state simply because they lack `this`
