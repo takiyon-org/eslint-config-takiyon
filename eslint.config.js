@@ -1,14 +1,18 @@
-import { FlatCompat } from '@eslint/eslintrc';
-
-const compat = new FlatCompat();
+import eslintJs from '@eslint/js';
+import perfectionist from 'eslint-plugin-perfectionist/configs/recommended-alphabetical';
+import importPlugin from 'eslint-plugin-import';
 
 export default [
-    ...compat.extends('eslint-config-airbnb-base'),
+    eslintJs.configs.recommended,
+    perfectionist,
     {
         files: [
             '**/*.{js,cjs,mjs,jsx}',
         ],
         ignores: ['./node_modules/**/*'],
+        plugins: {
+            import: importPlugin,
+        },
         languageOptions: {
             ecmaVersion: 'latest',
             sourceType: 'module',
@@ -52,6 +56,9 @@ export default [
             'import/parsers': {
                 espree: ['.js', '.cjs', '.mjs', '.jsx'],
             },
+            'import/resolver': {
+                node: true
+            }
         },
     },
 ];

@@ -1,8 +1,4 @@
 class ClassTest {
-    classMethodsUseThis() {
-        return 'Not every method without `this` should be static';
-    }
-
     static functionParenNewlineMultiArgument(
         longNamedArgument,
         longNamedArgument2,
@@ -21,6 +17,10 @@ class ClassTest {
             1337 +
             420 +
             69;
+    }
+
+    classMethodsUseThis() {
+        return 'Not every method without `this` should be static';
     }
 }
 
