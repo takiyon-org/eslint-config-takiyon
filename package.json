@@ -5,7 +5,7 @@
   "main": "eslint.config.js",
   "type": "module",
   "scripts": {
-    "test": "eslint ./test/**/*.js"
+    "test": "eslint"
   },
   "repository": {
     "type": "git",
@@ -22,20 +22,17 @@
   },
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon#readme",
   "peerDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/eslint-parser": "^7.13.10",
-    "eslint": "^9.6.0",
-    "eslint-plugin-import": "^2.7.0"
+    "@babel/core": "^8.0.0-rc.4",
+    "eslint": "^10.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/eslint-parser": "^7.13.10",
-    "@babel/preset-env": "^7.19.1",
-    "eslint": "^9.6.0",
-    "eslint-plugin-import": "^2.7.0"
+    "@babel/core": "^8.0.0-rc.4",
+    "@babel/preset-env": "^8.0.0-rc.4",
+    "eslint": "^10.2.1"
   },
   "dependencies": {
-    "@eslint/eslintrc": "^3.0.2",
-    "eslint-config-airbnb-base": "^15.0.0"
+    "@babel/eslint-parser": "^8.0.0-rc.4",
+    "@eslint/js": "^10.0.1",
+    "eslint-plugin-import-x": "^4.16.2"
   }
 }
