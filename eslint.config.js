@@ -8,7 +8,7 @@ import styles from './rules/styles.js';
 export default defineConfig([
     js.configs.recommended,
 
-    // Report unused disable directives (was linterOptions in resolved config)
+    // Report unused disable directives
     {
         linterOptions: {
             reportUnusedDisableDirectives: 'warn',
