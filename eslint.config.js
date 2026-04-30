@@ -8,27 +8,17 @@ import styles from './rules/styles.js';
 export default defineConfig([
     js.configs.recommended,
 
-    // Report unused disable directives
     {
         linterOptions: {
+            // Report unused disable directives
             reportUnusedDisableDirectives: 'warn',
         },
     },
 
-    // Shared rules
-    {
-        files: [
-            '**/*.{js,cjs,mjs,jsx}',
-        ],
-        languageOptions: {
-            ecmaVersion: 'latest',
-            sourceType: 'module',
-        },
-
-        ...base,
-        ...imports,
-        ...styles,
-    },
+    // Shared rule layers (core linting)
+    base,
+    imports,
+    styles,
 
     // ESM-specific: sourceType and JSX parsing
     {
