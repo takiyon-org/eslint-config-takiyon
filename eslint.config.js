@@ -1,7 +1,9 @@
 import js from '@eslint/js';
-import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig } from 'eslint/config';
-import { importX } from 'eslint-plugin-import-x';
+
+import base from './rules/base.js';
+import imports from './rules/imports.js';
+import styles from './rules/styles.js';
 
 export default defineConfig([
     js.configs.recommended,
@@ -22,49 +24,10 @@ export default defineConfig([
             ecmaVersion: 'latest',
             sourceType: 'module',
         },
-        plugins: {
-            '@stylistic': stylistic,
-            'import-x': importX,
-        },
-        rules: {
-            // Allow multiline arguments, but require newlines between each one in that case
-            'function-paren-newline': ['error', 'multiline-arguments'],
 
-            // --- @stylistic ---
-            // Two spaces are not enough; switch statements should have indentation
-            '@stylistic/indent': ['error', 4, {
-                SwitchCase: 1,
-            }],
-
-            // If using multi-line operators, require a linebreak after for readability
-            '@stylistic/operator-linebreak': ['error', 'after'],
-
-            // --- import-x ---
-            // ESM requires extensions, so should we
-            'import-x/extensions': ['error', 'ignorePackages', {
-                js: 'always',
-                cjs: 'never',
-                mjs: 'always',
-                jsx: 'always',
-            }],
-
-            // Do not scream about dev dependencies for build and test scripts
-            'import-x/no-extraneous-dependencies': ['error', {
-                devDependencies: [
-                    'examples/**',
-                    'test/**',
-                    '*.{js,cjs,mjs}',
-                ],
-                optionalDependencies: false,
-            }],
-        },
-
-        settings: {
-            // https://github.com/import-js/eslint-plugin-import/issues/2556
-            'import-x/parsers': {
-                espree: ['.js', '.cjs', '.mjs', '.jsx'],
-            },
-        },
+        ...base,
+        ...imports,
+        ...styles,
     },
 
     // ESM-specific: sourceType and JSX parsing
