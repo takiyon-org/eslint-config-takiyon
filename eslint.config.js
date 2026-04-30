@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import stylistic from '@stylistic/eslint-plugin'
 import { defineConfig } from 'eslint/config';
 import { importX } from 'eslint-plugin-import-x';
 
@@ -22,20 +23,23 @@ export default defineConfig([
             sourceType: 'module',
         },
         plugins: {
+            '@stylistic': stylistic,
             'import-x': importX,
         },
         rules: {
             // Allow multiline arguments, but require newlines between each one in that case
             'function-paren-newline': ['error', 'multiline-arguments'],
 
+            // --- @stylistic ---
             // Two spaces are not enough; switch statements should have indentation
-            indent: ['error', 4, {
+            '@stylistic/indent': ['error', 4, {
                 SwitchCase: 1,
             }],
 
             // If using multi-line operators, require a linebreak after for readability
-            'operator-linebreak': ['error', 'after'],
+            '@stylistic/operator-linebreak': ['error', 'after'],
 
+            // --- import-x ---
             // ESM requires extensions, so should we
             'import-x/extensions': ['error', 'ignorePackages', {
                 js: 'always',
