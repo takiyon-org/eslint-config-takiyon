@@ -1,7 +1,12 @@
 export default {
     // Originally adapted from eslint-config-airbnb-base
     // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/errors.js
+    // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/es6.js
     rules: {
+        // Verify super() callings in constructors
+        // https://eslint.org/docs/latest/rules/constructor-super
+        'constructor-super': 'error',
+
         // Enforce “for” loop update clause moving the counter in the right direction
         // https://eslint.org/docs/rules/for-direction
         'for-direction': 'error',
@@ -17,6 +22,14 @@ export default {
         // Disallow await inside of loops
         // https://eslint.org/docs/rules/no-await-in-loop
         'no-await-in-loop': 'error',
+
+        // Disallow modifying variables of class declarations
+        // https://eslint.org/docs/rules/no-class-assign
+        'no-class-assign': 'error',
+
+        // Disallow modifying variables that are declared using const
+        // https://eslint.org/docs/latest/rules/no-const-assign
+        'no-const-assign': 'error',
 
         // Disallow comparisons to negative zero
         // https://eslint.org/docs/rules/no-compare-neg-zero
@@ -44,6 +57,10 @@ export default {
         // Disallow duplicate arguments in functions
         'no-dupe-args': 'error',
 
+        // Disallow duplicate class members
+        // https://eslint.org/docs/rules/no-dupe-class-members
+        'no-dupe-class-members': 'error',
+
         // Disallow duplicate conditions in if-else-if chains
         // https://eslint.org/docs/rules/no-dupe-else-if
         'no-dupe-else-if': 'error',
@@ -51,8 +68,12 @@ export default {
         // Disallow duplicate keys when creating object literals
         'no-dupe-keys': 'error',
 
-        // Disallow a duplicate case label.
+        // Disallow a duplicate case label
         'no-duplicate-case': 'error',
+
+        // Disallow importing from the same path more than once
+        // https://eslint.org/docs/rules/no-duplicate-imports
+        'no-duplicate-imports': 'error',
 
         // Disallow empty statements
         'no-empty': 'error',
@@ -121,6 +142,22 @@ export default {
         // Disallow multiple spaces in a regular expression literal
         'no-regex-spaces': 'error',
 
+        // Disallow specified names in exports
+        // https://eslint.org/docs/rules/no-restricted-exports
+        'no-restricted-exports': ['error', {
+            restrictedNamedExports: [
+                'default', // Use `export default` to provide a default export
+                'then', // This will cause tons of confusion when your module is dynamically `import()`ed, and will break in most node ESM versions
+            ],
+        }],
+
+        // Disallow specific imports
+        // https://eslint.org/docs/rules/no-restricted-imports
+        'no-restricted-imports': ['off', {
+            paths: [],
+            patterns: [],
+        }],
+
         // Disallow returning values from setters
         // https://eslint.org/docs/rules/no-setter-return
         'no-setter-return': 'error',
@@ -131,6 +168,10 @@ export default {
         // Disallow template literal placeholder syntax in regular strings
         // https://eslint.org/docs/rules/no-template-curly-in-string
         'no-template-curly-in-string': 'error',
+
+        // Disallow to use this/super before super() calling in constructors.
+        // https://eslint.org/docs/rules/no-this-before-super
+        'no-this-before-super': 'error',
 
         // Avoid code that looks like two expressions but is actually one
         // https://eslint.org/docs/rules/no-unexpected-multiline
@@ -165,14 +206,86 @@ export default {
         // https://eslint.org/docs/rules/no-useless-backreference
         'no-useless-backreference': 'error',
 
+        // Disallow useless computed property keys
+        // https://eslint.org/docs/rules/no-useless-computed-key
+        'no-useless-computed-key': 'error',
+
+        // Disallow unnecessary constructor
+        // https://eslint.org/docs/rules/no-useless-constructor
+        'no-useless-constructor': 'error',
+
+        // Disallow renaming import, export, and destructured assignments to the same name
+        // https://eslint.org/docs/rules/no-useless-rename
+        'no-useless-rename': ['error', {
+            ignoreDestructuring: false,
+            ignoreImport: false,
+            ignoreExport: false,
+        }],
+
         // Disallow negation of the left operand of an in expression
         // Deprecated in favor of no-unsafe-negation
         'no-negated-in-lhs': 'off',
 
+        // Require let or const instead of var
+        // https://eslint.org/docs/latest/rules/no-va
+        'no-var': 'error',
+
+        // Suggest using arrow functions as callbacks
+        // https://eslint.org/docs/latest/rules/prefer-arrow-callback
+        'prefer-arrow-callback': ['error', {
+            allowNamedFunctions: false,
+            allowUnboundThis: true,
+        }],
+
+        // Suggest using of const declaration for variables that are never modified after declared
+        // https://eslint.org/docs/latest/rules/prefer-const
+        'prefer-const': ['error', {
+            destructuring: 'any',
+            ignoreReadBeforeAssign: true,
+        }],
+
+        // Prefer destructuring from arrays and objects
+        // https://eslint.org/docs/rules/prefer-destructuring
+        'prefer-destructuring': ['error', {
+            VariableDeclarator: {
+                array: false,
+                object: true,
+            },
+            AssignmentExpression: {
+                array: true,
+                object: false,
+            },
+        }, {
+            enforceForRenamedProperties: false,
+        }],
+
+        // Disallow parseInt() in favor of binary, octal, and hexadecimal literals
+        // https://eslint.org/docs/rules/prefer-numeric-literals
+        'prefer-numeric-literals': 'error',
+
+        // Use rest parameters instead of arguments
+        // https://eslint.org/docs/rules/prefer-rest-params
+        'prefer-rest-params': 'error',
+
+        // Suggest using the spread syntax instead of .apply()
+        // https://eslint.org/docs/rules/prefer-spread
+        'prefer-spread': 'error',
+
+        // Suggest using template literals instead of string concatenation
+        // https://eslint.org/docs/rules/prefer-template
+        'prefer-template': 'error',
+
         // Disallow assignments that can lead to race conditions due to usage of await or yield
         // https://eslint.org/docs/rules/require-atomic-updates
-        // note: not enabled because it is very buggy
-        'require-atomic-updates': 'off',
+        'require-atomic-updates': 'error',
+
+        // Disallow generator functions that do not have yield
+        // https://eslint.org/docs/rules/require-yield
+        'require-yield': 'error',
+
+        // Require a Symbol description
+        // https://eslint.org/docs/rules/symbol-description
+        'symbol-description': 'error',
 
         // Disallow comparisons with the value NaN
         'use-isnan': 'error',

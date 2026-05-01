@@ -8,6 +8,12 @@ export default {
     },
 
     rules: {
+        // Enforces no braces where they can be omitted
+        // https://eslint.org/docs/rules/arrow-body-style
+        'arrow-body-style': ['error', 'as-needed', {
+            requireReturnForObjectLiteral: true,
+        }],
+
         // Require camel case names
         // https://eslint.org/docs/latest/rules/camelcase
         camelcase: ['error', { properties: 'never', ignoreDestructuring: false }],
@@ -30,6 +36,15 @@ export default {
         // Require function expressions to have a name
         // https://eslint.org/docs/latest/rules/func-names
         'func-names': ['error', 'as-needed'],
+
+        // Import sorting
+        // https://eslint.org/docs/rules/sort-imports
+        'sort-imports': ['off', {
+            ignoreCase: false,
+            ignoreDeclarationSort: false,
+            ignoreMemberSort: false,
+            memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+        }],
 
         // Require a capital letter for constructors
         // https://eslint.org/docs/latest/rules/new-cap
@@ -104,6 +119,13 @@ export default {
         // https://eslint.org/docs/latest/rules/no-unneeded-ternary
         'no-unneeded-ternary': ['error', { defaultAssignment: false }],
 
+        // Require method and property shorthand syntax for object literals
+        // https://eslint.org/docs/rules/object-shorthand
+        'object-shorthand': ['error', 'always', {
+            ignoreConstructors: false,
+            avoidQuotes: true,
+        }],
+
         // Allow just one var statement per function
         // https://eslint.org/docs/latest/rules/one-var
         'one-var': ['error', 'never'],
@@ -135,6 +157,14 @@ export default {
 
         // Enforce spacing inside array brackets
         '@stylistic/array-bracket-spacing': ['error', 'never'],
+
+        // Require parens in arrow function arguments
+        // https://eslint.style/rules/arrow-parens
+        '@stylistic/arrow-parens': ['error', 'always'],
+
+        // Require space before/after arrow function's arrow
+        // https://eslint.style/rules/arrow-spacing
+        '@stylistic/arrow-spacing': ['error', { before: true, after: true }],
 
         // Enforce spacing inside single-line blocks
         // https://eslint.style/rules/block-spacing
@@ -189,6 +219,10 @@ export default {
         // https://eslint.style/rules/function-paren-newline
         '@stylistic/function-paren-newline': ['error', 'multiline-arguments'],
 
+        // Enforce the spacing around the * in generator functions
+        // https://eslint.style/rules/generator-star-spacing
+        '@stylistic/generator-star-spacing': ['error', { before: false, after: true }],
+
         // Enforce the location of arrow function bodies with implicit returns
         // https://eslint.style/rules/implicit-arrow-linebreak
         '@stylistic/implicit-arrow-linebreak': ['error', 'beside'],
@@ -239,6 +273,12 @@ export default {
         // more readable and easy to maintain.
         // https://eslint.style/rules/newline-per-chained-call
         '@stylistic/newline-per-chained-call': ['error', { ignoreChainWithDepth: 4 }],
+
+        // Disallow arrow functions where they could be confused with comparisons
+        // https://eslint.style/rules/no-confusing-arrow
+        '@stylistic/no-confusing-arrow': ['error', {
+            allowParens: true,
+        }],
 
         // Require parentheses for mixed operators
         // https://eslint.style/rules/no-mixed-operators
@@ -340,6 +380,10 @@ export default {
         // https://eslint.style/rules/quotes#quotes
         '@stylistic/quotes': ['error', 'single', { avoidEscape: true }],
 
+        // Enforce spacing between object rest-spread
+        // https://eslint.style/rules/rest-spread-spacing
+        '@stylistic/rest-spread-spacing': ['error', 'never'],
+
         // Require or disallow use of semicolons instead of ASI
         // https://eslint.style/rules/semi#semi
         '@stylistic/semi': ['error', 'always'],
@@ -396,8 +440,16 @@ export default {
         // https://eslint.style/rules/switch-colon-spacing
         '@stylistic/switch-colon-spacing': ['error', { after: true, before: false }],
 
+        // Enforce usage of spacing in template strings
+        // https://eslint.style/rules/template-curly-spacing
+        '@stylistic/template-curly-spacing': 'error',
+
         // Require or disallow spacing between template tags and their literals
         // https://eslint.style/rules/template-tag-spacing
         '@stylistic/template-tag-spacing': ['error', 'never'],
+
+        // Enforce spacing around the * in yield* expressions
+        // https://eslint.style/rules/yield-star-spacing
+        '@stylistic/yield-star-spacing': ['error', 'after'],
     },
 };
