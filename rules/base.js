@@ -238,6 +238,10 @@ export default {
         // https://eslint.org/docs/rules/require-yield
         'require-yield': 'error',
 
+        // Strict mode directives are unnecessary in modern code
+        // https://eslint.org/docs/latest/rules/strict
+        strict: ['error', 'never'],
+
         // Require a Symbol description
         // https://eslint.org/docs/rules/symbol-description
         'symbol-description': 'error',
