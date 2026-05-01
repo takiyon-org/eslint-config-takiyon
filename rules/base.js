@@ -230,51 +230,6 @@ export default {
         // https://eslint.org/docs/latest/rules/no-va
         'no-var': 'error',
 
-        // Suggest using arrow functions as callbacks
-        // https://eslint.org/docs/latest/rules/prefer-arrow-callback
-        'prefer-arrow-callback': ['error', {
-            allowNamedFunctions: false,
-            allowUnboundThis: true,
-        }],
-
-        // Suggest using of const declaration for variables that are never modified after declared
-        // https://eslint.org/docs/latest/rules/prefer-const
-        'prefer-const': ['error', {
-            destructuring: 'any',
-            ignoreReadBeforeAssign: true,
-        }],
-
-        // Prefer destructuring from arrays and objects
-        // https://eslint.org/docs/rules/prefer-destructuring
-        'prefer-destructuring': ['error', {
-            VariableDeclarator: {
-                array: false,
-                object: true,
-            },
-            AssignmentExpression: {
-                array: true,
-                object: false,
-            },
-        }, {
-            enforceForRenamedProperties: false,
-        }],
-
-        // Disallow parseInt() in favor of binary, octal, and hexadecimal literals
-        // https://eslint.org/docs/rules/prefer-numeric-literals
-        'prefer-numeric-literals': 'error',
-
-        // Use rest parameters instead of arguments
-        // https://eslint.org/docs/rules/prefer-rest-params
-        'prefer-rest-params': 'error',
-
-        // Suggest using the spread syntax instead of .apply()
-        // https://eslint.org/docs/rules/prefer-spread
-        'prefer-spread': 'error',
-
-        // Suggest using template literals instead of string concatenation
-        // https://eslint.org/docs/rules/prefer-template
-        'prefer-template': 'error',
-
         // Disallow assignments that can lead to race conditions due to usage of await or yield
         // https://eslint.org/docs/rules/require-atomic-updates
         'require-atomic-updates': 'error',

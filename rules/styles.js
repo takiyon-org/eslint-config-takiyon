@@ -134,13 +134,58 @@ export default {
         // https://eslint.org/docs/latest/rules/operator-assignment
         'operator-assignment': ['error', 'always'],
 
+        // Suggest using arrow functions as callbacks
+        // https://eslint.org/docs/latest/rules/prefer-arrow-callback
+        'prefer-arrow-callback': ['error', {
+            allowNamedFunctions: false,
+            allowUnboundThis: true,
+        }],
+
+        // Suggest using of const declaration for variables that are never modified after declared
+        // https://eslint.org/docs/latest/rules/prefer-const
+        'prefer-const': ['error', {
+            destructuring: 'any',
+            ignoreReadBeforeAssign: true,
+        }],
+
+        // Prefer destructuring from arrays and objects
+        // https://eslint.org/docs/rules/prefer-destructuring
+        'prefer-destructuring': ['error', {
+            VariableDeclarator: {
+                array: false,
+                object: true,
+            },
+            AssignmentExpression: {
+                array: true,
+                object: false,
+            },
+        }, {
+            enforceForRenamedProperties: false,
+        }],
+
         // Disallow the use of Math.pow in favor of the ** operator
         // https://eslint.org/docs/latest/rules/prefer-exponentiation-operator
         'prefer-exponentiation-operator': 'error',
 
+        // Disallow parseInt() in favor of binary, octal, and hexadecimal literals
+        // https://eslint.org/docs/rules/prefer-numeric-literals
+        'prefer-numeric-literals': 'error',
+
         // Prefer use of an object spread over Object.assign
         // https://eslint.org/docs/latest/rules/prefer-object-spread
         'prefer-object-spread': 'error',
+
+        // Use rest parameters instead of arguments
+        // https://eslint.org/docs/rules/prefer-rest-params
+        'prefer-rest-params': 'error',
+
+        // Suggest using the spread syntax instead of .apply()
+        // https://eslint.org/docs/rules/prefer-spread
+        'prefer-spread': 'error',
+
+        // Suggest using template literals instead of string concatenation
+        // https://eslint.org/docs/rules/prefer-template
+        'prefer-template': 'error',
 
         // Requires object keys to be sorted
         // https://eslint.org/docs/latest/rules/sort-keys
