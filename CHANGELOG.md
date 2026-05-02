@@ -16,3 +16,7 @@
 ### Added
 
 * Add names to each flat config object
+
+### Removed
+
+* Babel dependency
