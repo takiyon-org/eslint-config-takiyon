@@ -82,7 +82,7 @@ export default {
 
         // No Node.js builtin modules
         // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-nodejs-modules.md
-        'import-x/no-nodejs-modules': 'error',
+        'import-x/no-nodejs-modules': 'off',
 
         // Warn if a module could be mistakenly parsed as a script by a consumer leveraging
         // Unambiguous JavaScript Grammar
