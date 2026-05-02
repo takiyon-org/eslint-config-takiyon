@@ -97,9 +97,6 @@ export default {
         // https://eslint.org/docs/rules/no-extra-boolean-cast
         'no-extra-boolean-cast': 'error',
 
-        // Disallow unnecessary semicolons
-        'no-extra-semi': 'error',
-
         // Disallow overwriting functions written as function declarations
         'no-func-assign': 'error',
 
@@ -126,10 +123,6 @@ export default {
         // Disallow characters which are made with multiple code points in character class syntax
         // https://eslint.org/docs/rules/no-misleading-character-class
         'no-misleading-character-class': 'error',
-
-        // Disallow negation of the left operand of an in expression
-        // Deprecated in favor of no-unsafe-negation
-        'no-negated-in-lhs': 'off',
 
         // Disallow new operators with global non-constructor functions
         // https://eslint.org/docs/latest/rules/no-new-native-nonconstructor

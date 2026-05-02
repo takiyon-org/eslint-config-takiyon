@@ -335,6 +335,10 @@ export default {
             returnAssign: false,
         }],
 
+        // Disallow unnecessary semicolons
+        // https://eslint.style/rules/no-extra-semi
+        '@stylistic/no-extra-semi': 'error',
+
         // Require parentheses for mixed operators
         // https://eslint.style/rules/no-mixed-operators
         '@stylistic/no-mixed-operators': ['error', {
