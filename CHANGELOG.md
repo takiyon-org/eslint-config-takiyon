@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v5.0.1
+
+### Fixes
+
+* Remove non-existent `eslint-plugin-import` rule
+
 ## [v5.0.0](https://github.com/takiyon-org/eslint-config-takiyon/compare/v4.0.0...v5.0.0) (2026-05-01)
 
 ### Breaking Changes

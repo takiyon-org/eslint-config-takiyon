@@ -221,9 +221,5 @@ export default {
         // Require modules with a single export to use a default export
         // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/prefer-default-export.md
         'import-x/prefer-default-export': 'error',
-
-        // Disallow use of jsdoc-marked-deprecated imports
-        // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-deprecated.md
-        'import-x2/no-deprecated': 'off',
     },
 };
