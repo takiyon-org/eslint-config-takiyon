@@ -9,6 +9,8 @@ export default defineConfig([
     js.configs.recommended,
 
     {
+        name: 'takiyon/linter',
+
         linterOptions: {
             // Report unused disable directives
             reportUnusedDisableDirectives: 'warn',
@@ -22,6 +24,7 @@ export default defineConfig([
 
     // ESM-specific: sourceType and JSX parsing
     {
+        name: 'takiyon/esm/language',
         files: ['**/*.{js,mjs,jsx}'],
         languageOptions: {
             ecmaVersion: 'latest',
@@ -34,6 +37,7 @@ export default defineConfig([
 
     // CJS-specific: sourceType only
     {
+        name: 'takiyon/cjs/language',
         files: ['**/*.cjs'],
         languageOptions: {
             ecmaVersion: 'latest',

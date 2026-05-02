@@ -3,6 +3,8 @@ import stylistic from '@stylistic/eslint-plugin';
 // Originally adapted from eslint-config-airbnb-base
 // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/style.js
 export default {
+    name: 'takiyon/style',
+
     plugins: {
         '@stylistic': stylistic,
     },

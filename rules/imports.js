@@ -3,6 +3,8 @@ import { importX } from 'eslint-plugin-import-x';
 // Originally adapted from eslint-config-airbnb-base
 // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/imports.js
 export default {
+    name: 'takiyon/imports',
+
     plugins: {
         'import-x': importX,
     },

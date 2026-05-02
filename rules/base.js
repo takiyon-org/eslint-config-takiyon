@@ -1,6 +1,8 @@
 import confusingBrowserGlobals from 'confusing-browser-globals';
 
 export default {
+    name: 'takiyon/base',
+
     // Originally adapted from eslint-config-airbnb-base
     // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules
     rules: {

@@ -12,3 +12,7 @@
 * Migrate or remove other deprecated rules
 * Add the recommended ESLint rules
 * Adjust various rules to current practices
+
+### Added
+
+* Add names to each flat config object
