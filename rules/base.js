@@ -519,7 +519,7 @@ export default {
 
         // Disallow use of undefined variable
         // https://eslint.org/docs/rules/no-undefined
-        'no-undefined': 'error',
+        'no-undefined': 'off',
 
         // Avoid code that looks like two expressions but is actually one
         // https://eslint.org/docs/rules/no-unexpected-multiline
