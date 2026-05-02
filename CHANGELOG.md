@@ -4,9 +4,11 @@
 
 ### Breaking Changes
 
-* Migrated to ESLint 10
-* Made most peer dependencies regular dependencies of this configuration
-* Migrated entirely away from Airbnb, dropping some more controversial and less useful rules
+* Migrate to ESLint 10
+* Make most peer dependencies regular dependencies of this configuration
+* Migrate entirely away from Airbnb, dropping some more controversial and less useful rules
 * Migrate from `eslint-plugin-import` to `eslint-plugin-import-x`
 * Migrate from deprecated style rules in ESLint to ESLint Stylistic
-* Added the recommended ESLint rules
+* Migrate or remove other deprecated rules
+* Add the recommended ESLint rules
+* Adjust various rules to current practices
