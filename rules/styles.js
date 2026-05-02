@@ -11,7 +11,7 @@ export default {
         // Enforces no braces where they can be omitted
         // https://eslint.org/docs/rules/arrow-body-style
         'arrow-body-style': ['error', 'as-needed', {
-            requireReturnForObjectLiteral: true,
+            requireReturnForObjectLiteral: false,
         }],
 
         // Require camel case names
@@ -323,6 +323,16 @@ export default {
         // https://eslint.style/rules/no-confusing-arrow
         '@stylistic/no-confusing-arrow': ['error', {
             allowParens: true,
+        }],
+
+        // Disallow unnecessary parentheses
+        // https://eslint.style/rules/no-extra-parens
+        '@stylistic/no-extra-parens': ['off', 'all', {
+            conditionalAssign: true,
+            enforceForArrowConditionals: false,
+            ignoreJSX: 'all', // delegate to eslint-plugin-react
+            nestedBinaryExpressions: false,
+            returnAssign: false,
         }],
 
         // Require parentheses for mixed operators

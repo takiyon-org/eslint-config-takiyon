@@ -2,14 +2,13 @@ import confusingBrowserGlobals from 'confusing-browser-globals';
 
 export default {
     // Originally adapted from eslint-config-airbnb-base
-    // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/errors.js
-    // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/es6.js
+    // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules
     rules: {
         // Verify super() callings in constructors
         // https://eslint.org/docs/latest/rules/constructor-super
         'constructor-super': 'error',
 
-        // Enforce “for” loop update clause moving the counter in the right direction
+        // Enforce "for" loop update clause moving the counter in the right direction
         // https://eslint.org/docs/rules/for-direction
         'for-direction': 'error',
 
@@ -33,10 +32,6 @@ export default {
         // https://eslint.org/docs/rules/no-class-assign
         'no-class-assign': 'error',
 
-        // Disallow modifying variables that are declared using const
-        // https://eslint.org/docs/latest/rules/no-const-assign
-        'no-const-assign': 'error',
-
         // Disallow comparisons to negative zero
         // https://eslint.org/docs/rules/no-compare-neg-zero
         'no-compare-neg-zero': 'error',
@@ -46,6 +41,10 @@ export default {
 
         // Disallow use of console
         'no-console': 'warn',
+
+        // Disallow modifying variables that are declared using const
+        // https://eslint.org/docs/latest/rules/no-const-assign
+        'no-const-assign': 'error',
 
         // Disallows expressions where the operation doesn't affect the value
         // https://eslint.org/docs/rules/no-constant-binary-expression
@@ -98,16 +97,6 @@ export default {
         // https://eslint.org/docs/rules/no-extra-boolean-cast
         'no-extra-boolean-cast': 'error',
 
-        // Disallow unnecessary parentheses
-        // https://eslint.org/docs/rules/no-extra-parens
-        'no-extra-parens': ['off', 'all', {
-            conditionalAssign: true,
-            nestedBinaryExpressions: false,
-            returnAssign: false,
-            ignoreJSX: 'all', // delegate to eslint-plugin-react
-            enforceForArrowConditionals: false,
-        }],
-
         // Disallow unnecessary semicolons
         'no-extra-semi': 'error',
 
@@ -138,12 +127,16 @@ export default {
         // https://eslint.org/docs/rules/no-misleading-character-class
         'no-misleading-character-class': 'error',
 
-        // Disallow the use of object properties of the global object (Math and JSON) as functions
-        'no-obj-calls': 'error',
+        // Disallow negation of the left operand of an in expression
+        // Deprecated in favor of no-unsafe-negation
+        'no-negated-in-lhs': 'off',
 
         // Disallow new operators with global non-constructor functions
         // https://eslint.org/docs/latest/rules/no-new-native-nonconstructor
         'no-new-native-nonconstructor': 'error',
+
+        // Disallow the use of object properties of the global object (Math and JSON) as functions
+        'no-obj-calls': 'error',
 
         // Disallow returning values from Promise executor functions
         // https://eslint.org/docs/rules/no-promise-executor-return
@@ -179,10 +172,14 @@ export default {
                 message:
                     'Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan',
             },
-        ].concat(confusingBrowserGlobals.map((g) => ({
-            name: g,
-            message: `Use window.${g} instead. https://github.com/facebook/create-react-app/blob/HEAD/packages/confusing-browser-globals/README.md`,
-        }))),
+        ].concat(
+            confusingBrowserGlobals.map(
+                (g) => ({
+                    name: g,
+                    message: `Use window.${g} instead. https://github.com/facebook/create-react-app/blob/HEAD/packages/confusing-browser-globals/README.md`,
+                }),
+            ),
+        ),
 
         // Disallow specific imports
         // https://eslint.org/docs/rules/no-restricted-imports
@@ -195,9 +192,6 @@ export default {
         // https://eslint.org/docs/rules/no-setter-return
         'no-setter-return': 'error',
 
-        // Disallow sparse arrays
-        'no-sparse-arrays': 'error',
-
         // Disallow declaration of variables already declared in the outer scope
         // https://eslint.org/docs/latest/rules/no-shadow
         'no-shadow': 'error',
@@ -205,6 +199,9 @@ export default {
         // Disallow shadowing of names such as arguments
         // https://eslint.org/docs/latest/rules/no-shadow-restricted-names
         'no-shadow-restricted-names': 'error',
+
+        // Disallow sparse arrays
+        'no-sparse-arrays': 'error',
 
         // Disallow template literal placeholder syntax in regular strings
         // https://eslint.org/docs/rules/no-template-curly-in-string
@@ -282,10 +279,6 @@ export default {
             ignoreImport: false,
             ignoreExport: false,
         }],
-
-        // Disallow negation of the left operand of an in expression
-        // Deprecated in favor of no-unsafe-negation
-        'no-negated-in-lhs': 'off',
 
         // Require let or const instead of var
         // https://eslint.org/docs/latest/rules/no-va
