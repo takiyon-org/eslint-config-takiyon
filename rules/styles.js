@@ -33,6 +33,10 @@ export default {
             },
         }],
 
+        // Specify curly brace conventions for all control statements
+        // https://eslint.org/docs/rules/curly
+        curly: ['error', 'multi-line'],
+
         // Require function expressions to have a name
         // https://eslint.org/docs/latest/rules/func-names
         'func-names': ['error', 'as-needed'],
@@ -250,6 +254,10 @@ export default {
         // Disallow padding inside computed properties
         '@stylistic/computed-property-spacing': ['error', 'never'],
 
+        // Enforces consistent newlines before or after dots
+        // https://eslint.style/rules/dot-location
+        '@stylistic/dot-location': ['error', 'property'],
+
         // Enforce newline at the end of file, with no multiple empty lines
         '@stylistic/eol-last': ['error', 'always'],
 
@@ -339,6 +347,10 @@ export default {
         // https://eslint.style/rules/no-extra-semi
         '@stylistic/no-extra-semi': 'error',
 
+        // Disallow the use of leading or trailing decimal points in numeric literals
+        // https://eslint.style/rules/no-floating-decimal
+        '@stylistic/no-floating-decimal': 'error',
+
         // Require parentheses for mixed operators
         // https://eslint.style/rules/no-mixed-operators
         '@stylistic/no-mixed-operators': ['error', {
@@ -361,6 +373,12 @@ export default {
         // Disallow mixed spaces and tabs for indentation
         // https://eslint.style/rules/no-mixed-spaces-and-tabs#no-mixed-spaces-and-tabs
         '@stylistic/no-mixed-spaces-and-tabs': 'error',
+
+        // Disallow use of multiple spaces
+        // https://eslint.style/rules/no-multi-spaces
+        '@stylistic/no-multi-spaces': ['error', {
+            ignoreEOLComments: false,
+        }],
 
         // Disallow multiple empty lines, only one newline at the end, and no new lines at the
         // beginning.
@@ -506,6 +524,10 @@ export default {
         // Require or disallow spacing between template tags and their literals
         // https://eslint.style/rules/template-tag-spacing
         '@stylistic/template-tag-spacing': ['error', 'never'],
+
+        // Require immediate function invocation to be wrapped in parentheses
+        // https://eslint.style/rules/wrap-iife
+        '@stylistic/wrap-iife': ['error', 'outside', { functionPrototypeMethods: false }],
 
         // Enforce spacing around the * in yield* expressions
         // https://eslint.style/rules/yield-star-spacing
