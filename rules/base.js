@@ -1,3 +1,5 @@
+import confusingBrowserGlobals from 'confusing-browser-globals';
+
 export default {
     // Originally adapted from eslint-config-airbnb-base
     // https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/errors.js
@@ -14,6 +16,10 @@ export default {
         // Enforces that a return statement is present in property getters
         // https://eslint.org/docs/rules/getter-return
         'getter-return': ['error', { allowImplicit: true }],
+
+        // Enforce or disallow variable initializations at definition
+        // https://eslint.org/docs/latest/rules/init-declarations
+        'init-declarations': 'off',
 
         // Disallow using an async function as a Promise executor
         // https://eslint.org/docs/rules/no-async-promise-executor
@@ -53,6 +59,10 @@ export default {
 
         // Disallow use of debugger
         'no-debugger': 'error',
+
+        // Disallow deletion of variables
+        // https://eslint.org/docs/latest/rules/no-delete-var
+        'no-delete-var': 'error',
 
         // Disallow duplicate arguments in functions
         'no-dupe-args': 'error',
@@ -116,6 +126,10 @@ export default {
         // Disallow irregular whitespace outside of strings and comments
         'no-irregular-whitespace': 'error',
 
+        // Disallow labels that share a name with a variable
+        // https://eslint.org/docs/rules/no-label-var
+        'no-label-var': 'error',
+
         // Disallow Number Literals That Lose Precision
         // https://eslint.org/docs/rules/no-loss-of-precision
         'no-loss-of-precision': 'error',
@@ -151,6 +165,25 @@ export default {
             ],
         }],
 
+        // Disallow specific globals
+        // https://eslint.org/docs/latest/rules/no-restricted-globals#rule-details
+        'no-restricted-globals': [
+            'error',
+            {
+                name: 'isFinite',
+                message:
+                    'Use Number.isFinite instead https://github.com/airbnb/javascript#standard-library--isfinite',
+            },
+            {
+                name: 'isNaN',
+                message:
+                    'Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan',
+            },
+        ].concat(confusingBrowserGlobals.map((g) => ({
+            name: g,
+            message: `Use window.${g} instead. https://github.com/facebook/create-react-app/blob/HEAD/packages/confusing-browser-globals/README.md`,
+        }))),
+
         // Disallow specific imports
         // https://eslint.org/docs/rules/no-restricted-imports
         'no-restricted-imports': ['off', {
@@ -165,6 +198,14 @@ export default {
         // Disallow sparse arrays
         'no-sparse-arrays': 'error',
 
+        // Disallow declaration of variables already declared in the outer scope
+        // https://eslint.org/docs/latest/rules/no-shadow
+        'no-shadow': 'error',
+
+        // Disallow shadowing of names such as arguments
+        // https://eslint.org/docs/latest/rules/no-shadow-restricted-names
+        'no-shadow-restricted-names': 'error',
+
         // Disallow template literal placeholder syntax in regular strings
         // https://eslint.org/docs/rules/no-template-curly-in-string
         'no-template-curly-in-string': 'error',
@@ -172,6 +213,18 @@ export default {
         // Disallow to use this/super before super() calling in constructors.
         // https://eslint.org/docs/rules/no-this-before-super
         'no-this-before-super': 'error',
+
+        // Disallow use of undeclared variables unless mentioned in a /*global */ block
+        // https://eslint.org/docs/latest/rules/no-undef#rule-details
+        'no-undef': 'error',
+
+        // Disallow use of undefined when initializing variables
+        // https://eslint.org/docs/latest/rules/no-undef-init
+        'no-undef-init': 'error',
+
+        // Disallow use of undefined variable
+        // https://eslint.org/docs/rules/no-undefined
+        'no-undefined': 'error',
 
         // Avoid code that looks like two expressions but is actually one
         // https://eslint.org/docs/rules/no-unexpected-multiline
@@ -201,6 +254,14 @@ export default {
         // Disallow Unused Private Class Members
         // https://eslint.org/docs/rules/no-unused-private-class-members
         'no-unused-private-class-members': 'error',
+
+        // Disallow declaration of variables that are not used in the code
+        // https://eslint.org/docs/latest/rules/no-unused-vars
+        'no-unused-vars': ['error', { vars: 'all', args: 'after-used', ignoreRestSiblings: true }],
+
+        // Disallow use of variables before they are defined
+        // https://eslint.org/docs/latest/rules/no-use-before-define
+        'no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
 
         // Disallow useless backreferences in regular expressions
         // https://eslint.org/docs/rules/no-useless-backreference
